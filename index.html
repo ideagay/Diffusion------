@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>扩散闪烁效果</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+</head>
+<body>
+    <div class="diffusion">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+<button type="button" class="paused" id="button" style="position: absolute;top:40%;left: 50%">暂停</button>
+<script>
+       $("#button").toggle(  //此方法在1.9里已被废除
+            function(){
+                $(".diffusion div").css('animation-play-state','paused');
+                $(this).html("播放");
+            },
+            function(){
+                $(".diffusion div").css('animation-play-state','running');
+                $(this).html("暂停");
+            }
+
+    )
+</script>
+</body>
+</html>
